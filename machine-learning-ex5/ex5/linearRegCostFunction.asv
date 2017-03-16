@@ -1,0 +1,12 @@
+function [J, grad] = linearRegCostFunction(X, y, theta, lambda)
+m=length(y);
+J = 0;
+grad = zeros(size(theta));
+
+J=(sum(((X*theta)-y).^2))/(2*m) + ((lambda/(2*m))*(sum(theta.^2)-(theta(1,1) ^2)));
+J
+
+
+grad = grad(:);
+
+end
